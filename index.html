@@ -60,7 +60,7 @@
 
 <!--cuerpo-->
 
-        <div class="row row-cols-2  ">
+        <div class="row row-cols-2 ">
             <div class="col col-12 col-xl-2 col-lg-3 col-md-3">
                 <div class="list-group ">
                     <div class="accordion" id="accordionExample">
@@ -70,7 +70,7 @@
                                     <button class="btn btn-link btn-block text-left  d-xl-block d-lg-none d-md-none d-sm-none d-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         Computer Programmer Program Development
                                     </button>
-                                    <button class="btn btn-link btn-block text-left d-xl-none d-lg-block  text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-link btn-block text-left d-xl-none d-lg-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <img  class="img-fluid w-100 d-none d-xl-block d-lg-none d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
                                         <img  class="img-fluid w-75  d-none d-xl-none d-lg-block d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
                                         <img  class="img-fluid w-75  d-none d-xl-none d-lg-none d-md-block d-sm-none" src="img/birrete.png" alt="birrete">
@@ -82,9 +82,9 @@
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <ul class="list-group">
-                                        <li class="list-group-item active" id="all" onclick="showTypeAll()">All</li>
+                                        <li class="list-group-item active" id="all" onclick="addActiveAll()">All</li>
                                         <li class="list-group-item" id="asp" onclick="showTypeASP()">ASP.NET</li>
-                                        <li class="list-group-item" id="python" onclick="showType()">Python</li>
+                                        <li class="list-group-item" id="python" onclick="showTypePython()">Python</li>
                                         <li class="list-group-item" id="CSS" onclick="showType()">CSS</li>
                                         <li class="list-group-item" id="java" onclick="showType()">Java</li>
                                         <li class="list-group-item" id="javascript" onclick="showType()">JavaScript</li>
@@ -143,7 +143,7 @@
 
                 <div class="row justify-content-center">
 
-                    <div id="carrusel" class="col-10">
+                    <div id="carrusel" class="col-8">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -177,7 +177,12 @@
                 <br>
                 <!--            Intems contents-->
                 <div class="row justify-content-center " >
-                    <div class=" asp col-10" id="aspdiv">
+                    <div class=" asp col-8" id="aspdiv">
+
+                    </div>
+                </div>
+                <div class="row justify-content-center " >
+                    <div class=" python col-8" id="pythondiv">
 
                     </div>
                 </div>
@@ -197,21 +202,62 @@
 
 <script>
     function showTypeASP(){
-
-
+        removeActiveAll();
         if ($(".asp").is(":visible") == false){
             $(".asp").removeClass('d-none');
             $(".asp").addClass('d-block');
+            $("#asp").addClass('active');
 
         }else{
             $(".asp").removeClass('d-block');
+            $("#asp").removeClass('active');
             $(".asp").addClass('d-none');
-
-
         }
+    }
 
+    function showTypePython(){
+        removeActiveAll();
+        if ($(".python").is(":visible") == false){
+            $(".python").removeClass('d-none');
+            $(".python").addClass('d-block');
+            $("#python").addClass('active');
+
+        }else{
+            $(".python").removeClass('d-block');
+            $("#python").removeClass('active');
+            $(".python").addClass('d-none');
+        }
+    }
+
+    function removeActiveAll(){
+        $("#all").removeClass('active');
+        //Se desaparecen todos los items
+        $(".asp").removeClass('d-block');
+        $("#asp").removeClass('active');
+        $(".asp").addClass('d-none');
+
+        $(".python").removeClass('d-block');
+        $("#python").removeClass('active');
+        $(".python").addClass('d-none');
 
     }
+
+    function addActiveAll(){
+
+        $("#all").addClass('active');
+        $("#asp").removeClass('active');
+        $("#python").removeClass('active');
+
+
+        //Activa todos los items
+        $(".asp").removeClass('d-none');
+        $(".asp").addClass('d-block');
+
+        $(".python").removeClass('d-none');
+        $(".python").addClass('d-block');
+    }
+
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -231,23 +277,18 @@
 <script>
 
     $(function() {
-        //  alert("kk");
-        //  $('#aspdiv').html('<div class="loading"><div class="alert alert-primary" role="alert"><img src="images/loader.gif"/><br/>Procesando, por favor espere...</div></div>');
-        //     $("#aspdiv").load("aspdotnet.html");
-        // $( "#new-projects" ).load( "/resources/load.html #projects li" );
-
-
-        // $( "#aspdiv" ).load( "aspdotnet.html", function() {
-        //     alert( "Load was performed." );
-        // });
-        //  $('#aspdiv').html('<div class="loading"><div class="alert alert-primary" role="alert"><img src="images/loader.gif"/><br/>Procesando, por favor espere...</div></div>', function() {
-        //      alert( "Load was performed." );
-        //  });
 
         $.ajax({
             url : "aspdotnet.html",
             success : function (data) {
                 $("#aspdiv").html(data);
+            }
+        });
+
+        $.ajax({
+            url : "python.html",
+            success : function (data) {
+                $("#pythondiv").html(data);
             }
         });
     });
