@@ -23,10 +23,15 @@
     <div class=" w-100 text-center " id="titulo">
         <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 fixed-top" >
             <a class="navbar-brand" href="#">
-<!--                <h1>Johnny's Portfolio</h1>-->
-<!--                <p class="lead h6 row">johnny.aracena@gmail.com<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"> - software engineer </span></p>-->
-                <h1>Johnny's Portfolio</h1>
-                <p class="lead h6 text-nowrap">johnny.aracena@gmail.com</p>
+
+                <span class="d-none d-xl-block d-lg-block d-md-block"> <h1>Johnny's Portfolio</h1>
+                    <p class="lead h6 text-nowrap">johnny.aracena@gmail.com</p>
+                </span>
+
+                <span class="d-block  d-xl-none d-lg-none d-md-none">
+                    <p class="lead h6 text-nowrap">Johnny's Portfolio - johnny.aracena@gmail.com</p>
+                </span>
+
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -223,23 +228,16 @@
 <!--    footer-->
     <div class="bg-info fixed-bottom mb-0 mt-0" id="footer">
         <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" >
-            <a class="navbar-brand align-text-top" href="#">
-                <p>&copy; Johnny Aracena. All Right Reserved.
-                    <script>
-                        var fecha = new Date();
-                        var ano = fecha.getFullYear();
-                        document.write(ano);
-                    </script></p>
-            </a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active ml-5  mr-5">
-                        <p class="text-dark"><span class="font-weight-bold">This page:</span><br>
-                            <div class="row">
-                                <div class="col">
+                    <li class="nav-item active ml-5  mr-5 col-sm-3 ">
+                        <p class="text-dark d-none  d-xl-block d-lg-block d-md-block"><span class="font-weight-bold">This page:</span><br>
+                            <div class="row d-none d-xl-block d-lg-block d-md-block">
+                                <div class="col ">
                                     <a class="text-decoration-none" href="https://www.w3.org/TR/html401/" target="_blank">HTML4</a><br>
                                     <a class="text-decoration-none" href="https://getbootstrap.com/" target="_blank">Boostrap</a><br>
                                     <a class="text-decoration-none" href="https://jquery.com/" target="_blank">JQuery</a><br>
@@ -248,7 +246,7 @@
                             </div>
                         </p>
                     </li>
-                    <li class="nav-item text-dark ml-5 mr-5">
+                    <li class="nav-item text-dark ml-5 mr-5 col-sm-3">
                         <p class="text-dark"><span class="font-weight-bold ">Navigation:</span><br>
                             <div class="row " >
                                 <div class="col">
@@ -266,19 +264,39 @@
                             </div>
                         </p>
 
-<!--                        <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/johnnyaracena/?locale=en_US">Navigatiop</a>-->
-<!--                        <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/johnnyaracena/?locale=en_US">LinkedIn</a>-->
                     </li>
-                    <li class="nav-item text-right ml-5 mr-5">
+                    <li class="nav-item ml-5 mr-5 col-sm-3">
                         <p class="text-dark"><span class="font-weight-bold ">Contact:</span><br>
                         <div class="row " >
                             <div class="col">
-                                <a href="tel:807-407-9272">807-407-9272</a><br>
+                                <a href="tel:807-407-9272">+1-807-407-9272</a><br>
                                 <a href="mailto:johnny.aracena@gmail.com">johnny.aracena@gmail.com</a>
+                                <p class="text-nowrap">&copy; Johnny Aracena. All Right Reserved.
+                                    <script>
+                                        var fecha = new Date();
+                                        var ano = fecha.getFullYear();
+                                        document.write(ano);
+                                    </script></p>
                             </div>
                         </div>
                         </p>
                     </li>
+
+<!--                    <li>-->
+
+<!--                        <a class="navbar-brand " href="#">-->
+<!--                            <p>&copy; Johnny Aracena. All Right Reserved.-->
+<!--                                <script>-->
+<!--                                    var fecha = new Date();-->
+<!--                                    var ano = fecha.getFullYear();-->
+<!--                                    document.write(ano);-->
+<!--                                </script></p>-->
+<!--                        </a>-->
+
+<!--                    </li>-->
+
+
+
                 </ul>
             </div>
         </nav>
@@ -331,7 +349,7 @@
             $(".css_").addClass('d-block');
             $("#css_").addClass('active');
             $(".imglogo").attr({
-                "src":"img/Css_Logo.png",
+                "src":"img/CSS_Logo.png",
                 "alt":"Css Logo"
             });
 
