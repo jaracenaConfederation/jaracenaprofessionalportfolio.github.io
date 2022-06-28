@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="container-fluid" >
+<div class="container" >
 
 <!--title-->
     <div class=" w-100 text-center " id="titulo">
@@ -71,9 +71,8 @@
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left  d-xl-block d-lg-none d-md-none d-sm-none d-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Computer Programmer Program Development
-                                    </button>
+<!--                                    <button class="btn btn-link btn-block text-left  d-xl-block d-lg-none d-md-none d-sm-none d-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                                    </button>-->
                                     <button class="btn btn-link btn-block text-left d-xl-none d-lg-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <img  class="img-fluid w-100 d-none d-xl-block d-lg-none d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
                                         <img  class="img-fluid w-75  d-none d-xl-none d-lg-block d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
@@ -90,7 +89,9 @@
                                         <li class="list-group-item" id="asp" onclick="showTypeASP()">ASP.NET</li>
                                         <li class="list-group-item" id="python" onclick="showTypePython()">Python</li>
                                         <li class="list-group-item" id="css_" onclick="showTypeCSS()">CSS</li>
-<!--                                        <li class="list-group-item" id="java" onclick="showTypeJava()">Java</li>-->
+                                        <li class="list-group-item" id="react_" onclick="showTypeReact()">React</li>
+
+                                        <!--                                        <li class="list-group-item" id="java" onclick="showTypeJava()">Java</li>-->
 <!--                                        <li class="list-group-item" id="javascript" onclick="showType()">JavaScript</li>-->
 <!--                                        <li class="list-group-item" id="raptor" onclick="showType()">Raptor</li>-->
 <!--                                        <li class="list-group-item" id="csharp" onclick="showType()">C#</li>-->
@@ -210,8 +211,75 @@
 <!--cuerpo-->
 <!--    footer-->
     <div class="bg-info" id="footer">
-        <p>footer</p>
-        <p>footer</p>
+        <div class="bg-info fixed-bottom mb-0 mt-0" id="footer">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active ml-5  mr-5  ">
+                            <p class="text-dark d-none  d-xl-block d-lg-block d-md-block"><span class="font-weight-bold">This page:</span><br>
+                            </p><div class="row d-none d-xl-block d-lg-block d-md-block">
+                            <div class="col ">
+                                <a class="text-decoration-none" href="https://www.w3.org/TR/html401/" target="_blank">HTML4</a><br>
+                                <a class="text-decoration-none" href="https://getbootstrap.com/" target="_blank">Boostrap</a><br>
+                                <a class="text-decoration-none" href="https://jquery.com/" target="_blank">JQuery</a><br>
+                                <a class="text-decoration-none" href="https://www.w3schools.com/css/" target="_blank">CSS</a>
+                            </div>
+                        </div>
+                            <p></p>
+                        </li>
+                        <li class="nav-item text-dark ml-5 mr-5 ">
+                            <p class="text-dark"><span class="font-weight-bold ">Navigation:</span><br>
+                            </p><div class="row ">
+                            <div class="col">
+                                <a class="text-decoration-none" href="#">Home</a><br>
+                                <span class="text-nowrap">About Me</span> <br>
+                                <a class="text-decoration-none" target="_blank" href="https://www.linkedin.com/in/johnnyaracena/?locale=en_US">Linkedin</a>
+
+                            </div>
+                            <div class="col">
+                                <a class="text-decoration-none" href="#" onclick="showTypeASP()">ASP.NET</a><br>
+                                <a class="text-decoration-none" href="#" onclick="showTypePython()">Python</a><br>
+                                <a class="text-decoration-none" href="#" onclick="showTypeCSS()">CSS</a><br>
+                                <a class="text-decoration-none" href="#" onclick="showTypeJava()">Java</a>
+                            </div>
+                        </div>
+                            <p></p>
+
+                        </li>
+                        <li class="nav-item ml-5 mr-5 ">
+                            <p class="text-dark"><span class="font-weight-bold ">Contact:</span><br>
+                            </p><div class="row ">
+                            <div class="col">
+                                <a href="tel:807-407-9272">+1-807-407-9272</a><br>
+                                <a href="mailto:johnny.aracena@gmail.com">johnny.aracena@gmail.com</a>
+                                <p class="text-nowrap">© Johnny Aracena. All Right Reserved.
+                                    <script>
+                                        var fecha = new Date();
+                                        var ano = fecha.getFullYear();
+                                        document.write(ano);
+                                    </script>2022</p>
+                            </div>
+                        </div>
+                            <p></p>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+
+
+
+
     </div>
 <!--footer-->
 
@@ -274,7 +342,19 @@
         }
     }
 
+    function showTypeReact(){
+        removeActiveAll();
+        if ($(".react_").is(":visible") == false){
+            $(".react_").removeClass('d-none');
+            $(".react_").addClass('d-block');
+            $("#react_").addClass('active');
 
+        }else{
+            $(".react_").removeClass('d-block');
+            $("#react_").removeClass('active');
+            $(".react_").addClass('d-none');
+        }
+    }
 
     function removeActiveAll(){
         $("#all").removeClass('active');
@@ -304,7 +384,7 @@
         $("#python").removeClass('active');
         $("#css").removeClass('active');
         $("#java").removeClass('active');
-
+        $("#react").removeClass('active');
         //Activa todos los items
         $(".asp").removeClass('d-none');
         $(".asp").addClass('d-block');
@@ -318,6 +398,8 @@
         $(".java").removeClass('d-none');
         $(".java").addClass('d-block');
 
+        $(".react").removeClass('d-none');
+        $(".react").addClass('d-block');
     }
 
 
