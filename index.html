@@ -17,9 +17,8 @@
     <title>Johnny's Professional Portfolio - Software Engineer</title>
 </head>
 <body>
-<div class="container-fluid " >
-
-    <!--title-->
+<div class="container" >
+<!--title-->
     <div class=" w-100 text-center " id="titulo">
         <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 fixed-top" >
             <a class="navbar-brand" href="#">
@@ -83,9 +82,8 @@
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left  d-xl-block d-lg-none d-md-none d-sm-none d-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Computer Programmer Program Development
-                                    </button>
+<!--                                    <button class="btn btn-link btn-block text-left  d-xl-block d-lg-none d-md-none d-sm-none d-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                                    </button>-->
                                     <button class="btn btn-link btn-block text-left d-xl-none d-lg-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <img  class="img-fluid w-100 d-none d-xl-block d-lg-none d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
                                         <img  class="img-fluid w-75  d-none d-xl-none d-lg-block d-md-none d-sm-none" src="img/birrete.png" alt="birrete">
@@ -102,7 +100,9 @@
                                         <li class="list-group-item" id="asp" onclick="showTypeASP()">ASP.NET</li>
                                         <li class="list-group-item" id="python" onclick="showTypePython()">Python</li>
                                         <li class="list-group-item" id="css_" onclick="showTypeCSS()">CSS</li>
-                                        <li class="list-group-item" id="java" onclick="showTypeJava()">Java</li>
+                                        <!-- <li class="list-group-item" id="java" onclick="showTypeJava()">Java</li> -->
+                                        <li class="list-group-item" id="react_" onclick="showTypeReact()">React</li>
+
 <!--                                        <li class="list-group-item" id="javascript" onclick="showType()">JavaScript</li>-->
 <!--                                        <li class="list-group-item" id="raptor" onclick="showType()">Raptor</li>-->
 <!--                                        <li class="list-group-item" id="csharp" onclick="showType()">C#</li>-->
@@ -226,6 +226,7 @@
         </div>
 <!--cuerpo-->
 <!--    footer-->
+
     <div class="bg-info fixed-bottom mb-0 mt-0" id="footer">
         <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" >
 
@@ -272,6 +273,7 @@
                                 <a href="tel:807-407-9272">+1-807-407-9272</a><br>
                                 <a href="mailto:johnny.aracena@gmail.com">johnny.aracena@gmail.com</a>
                                 <p class="text-nowrap">&copy; Johnny Aracena. All Right Reserved.
+
                                     <script>
                                         var fecha = new Date();
                                         var ano = fecha.getFullYear();
@@ -363,6 +365,22 @@
         }
     }
 
+
+    function showTypeReact(){
+        removeActiveAll();
+        if ($(".react_").is(":visible") == false){
+            $(".react_").removeClass('d-none');
+            $(".react_").addClass('d-block');
+            $("#react_").addClass('active');
+
+        }else{
+            $(".react_").removeClass('d-block');
+            $("#react_").removeClass('active');
+            $(".react_").addClass('d-none');
+        }
+    }
+
+
     function removeActiveAll(){
         $("#all").removeClass('active');
         //Se desaparecen todos los items
@@ -391,7 +409,7 @@
         $("#python").removeClass('active');
         $("#css").removeClass('active');
         $("#java").removeClass('active');
-
+        $("#react").removeClass('active');
         //Activa todos los items
         $(".asp").removeClass('d-none');
         $(".asp").addClass('d-block');
@@ -405,6 +423,8 @@
         $(".java").removeClass('d-none');
         $(".java").addClass('d-block');
 
+        $(".react").removeClass('d-none');
+        $(".react").addClass('d-block');
     }
 
 
