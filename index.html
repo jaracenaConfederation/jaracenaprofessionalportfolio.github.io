@@ -140,6 +140,7 @@
                 <!--            body title-->
                 <div class="text-center">
                     <p class="h1 text-dark">Welcome to my personal portfolio</p>
+                    <p class="h5 text-dark">(in construction)</p>
                     <p class="h5">you feel free to download and try any code that is in this portfolio</p>
                 </div>
                 <!--            body title-->
@@ -205,13 +206,19 @@
 
                     </div>
                 </div>
+                <div class="row justify-content-center " >
+                    <div class="react col-8" id="reactdiv">
+
+                    </div>
+                </div>
                 <!--            Intems contents-->
             </div>
         </div>
 <!--cuerpo-->
-<!--    footer-->
-    <div class="bg-info" id="footer">
-        <div class="bg-info fixed-bottom mb-0 mt-0" id="footer">
+
+    <!--    footer-->
+<!--    <div class="bg-info" id="footer">-->
+        <div class="bg-info  mb-0 mt-0" id="footer">
             <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -245,6 +252,7 @@
                                 <a class="text-decoration-none" href="#" onclick="showTypePython()">Python</a><br>
                                 <a class="text-decoration-none" href="#" onclick="showTypeCSS()">CSS</a><br>
                                 <a class="text-decoration-none" href="#" onclick="showTypeJava()">Java</a>
+                                <a class="text-decoration-none" href="#" onclick="showTypeReact()">React</a>
                             </div>
                         </div>
                             <p></p>
@@ -272,17 +280,8 @@
             </nav>
         </div>
 
-
-
-
-
-
-
-
-
-    </div>
-<!--footer-->
-
+<!--    </div>-->
+    <!--footer-->
 </div>
 
 <script>
@@ -359,21 +358,31 @@
     function removeActiveAll(){
         $("#all").removeClass('active');
         //Se desaparecen todos los items
+
         $(".asp").removeClass('d-block');
         $("#asp").removeClass('active');
         $(".asp").addClass('d-none');
+
 
         $(".python").removeClass('d-block');
         $("#python").removeClass('active');
         $(".python").addClass('d-none');
 
+
         $(".css_").removeClass('d-block');
         $("#css_").removeClass('active');
         $(".css_").addClass('d-none');
 
+
         $(".java").removeClass('d-block');
         $("#java").removeClass('active');
         $(".java").addClass('d-none');
+        $(".react").addClass('d-none');
+
+        $(".react_").removeClass('d-block');
+        $("#react_").removeClass('active');
+        $(".react_").addClass('d-none');
+
 
     }
 
@@ -416,6 +425,7 @@
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 
 <!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"  ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"  ></script>
 
@@ -447,6 +457,13 @@
             url : "java.html",
             success : function (data) {
                 $("#javadiv").html(data);
+            }
+        });
+
+        $.ajax({
+            url : "react.html",
+            success : function (data) {
+                $("#reactdiv").html(data);
             }
         });
 
