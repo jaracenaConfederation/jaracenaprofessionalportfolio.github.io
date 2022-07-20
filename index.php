@@ -100,7 +100,7 @@
                                             Indexation and relation of documents interface
                                         </div>
                                         <div class="col-12 modal-body w-100 text-center">
-<!--                                            <iframe class="w-100 h-100" src="http://192.168.250.39:8000" style="height: 30rem"></iframe>-->
+<!--                                            <iframe class="w-100 h-100" src="http://216.211.50.2:8000" style="height: 30rem"></iframe>-->
                                             <img src="include/img/documents-link.png" style="height: 30rem">
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                             Operational efficiency KPIs
                                         </div>
                                         <div class="col-12 modal-body w-100 text-center">
-                                            <!--                                            <iframe class="w-100 h-100" src="http://192.168.250.39:8000" style="height: 30rem"></iframe>-->
+                                            <!--                                            <iframe class="w-100 h-100" src="http://216.211.50.2:8000" style="height: 30rem"></iframe>-->
                                             <img src="include/img/KPI.png" style="height: 30rem">
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                 <div class="modal-dialog modal-lg " role="document">
                                     <div class="modal-content h5" style="height: 40em; width: 60rem">
                                         <div class="col-12 modal-body h-100">
-                                            <iframe class="w-100 h-100" src="http://192.168.250.39:8000" style="height: 30rem"></iframe>
+                                            <iframe class="w-100 h-100" src="http://216.211.50.2:8000" style="height: 30rem"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@
                                 <div class="modal-dialog modal-lg " role="document">
                                     <div class="modal-content h5" style="height: 40em; width: 60rem">
                                         <div class="col-12 modal-body h-100">
-                                            <iframe class="w-100 h-100" src="http://192.168.250.39:8001" style="height: 30rem"></iframe>
+                                            <iframe class="w-100 h-100" src="http://216.211.50.2:8001" style="height: 30rem"></iframe>
                                         </div>
                                     </div>
                                 </div>
