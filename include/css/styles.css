@@ -30,9 +30,20 @@ body{
     object-fit: contain;
     padding: 0px;
     margin: auto;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 10px 10px 5px lightgray;
 }
 .centrado{
     position: absolute;
     top: 0%;
     left: 0%;
+}
+
+.efectoHover{
+    transition: all 500ms ease-out;
+}
+.efectoHover:hover {
+    box-shadow: 10px 10px 5px lightgray;
+    transform: scale(1.05);
+    transition: all 250ms ease-out;
 }

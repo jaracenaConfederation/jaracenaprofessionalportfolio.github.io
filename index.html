@@ -14,6 +14,8 @@
 
     <title>Johnny's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="stylesheet" href="./include/css/styles.css">
 </head>
 <body>
@@ -21,7 +23,7 @@
     <div class="container bg-white  position-relative zindex-99" >
         <div id="info-header" class=" bg-black p-0 text-left border-0 bd-white " >
             <div class="cat ">
-                <img id="img-fondo" class="m-0 " src="./include/img/AdobeStock_198432819.jpeg" />
+                <img id="img-fondo" class="m-0  shadow" src="./include/img/AdobeStock_198432819.jpeg" />
                 <div class="centrado text-left">
                     <h4 class="text-left bg-transparent bg-opacity-0 text-white m-2 p-1 my-0 d-none d-md-block my-lg-4">Welcome</h4>
                     <h1 class="text-left bg-transparent bg-opacity-0 text-white m-2 p-1 my-0 d-none d-md-block">Full Stack Developer</h1>
@@ -36,135 +38,95 @@
         </div>
 
         <div class = "card justify-content-center bg-white text-opacity-100  m-4 border-0 border-right ">
-            <div class="card card-header bg-transparent border-0">
-                <h3 class="text-black opacity-75 shadow">EXPERIENCE</h3>
-            </div>
+<!--            <div class="card card-header bg-transparent border-0">-->
+<!--                <h3 class="text-black opacity-75 shadow">EXPERIENCE</h3>-->
+<!--            </div>-->
 
-            <div  class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25 ">
-                <div class="row p-2">
-                    <div class="col-12 col-lg-5 card border-0  p-4 ">
-                        <h3 class="text-center">Universidad de La Serena University</h3>
-                        <div class="card-body ">
-                            <div>
-                                <div class="">
-                                    <p class="text-center">Creation of a web platform for the control and reporting of expenses of university projects.</p>
 
-                                    <ul class="">
-                                        <li>Analyzed, designed, developed, tested, and implemented financial application for manage and control project expenses.</li>
-                                        <li>Reduction of the time of analysis and processing expenses of the projects from 1 month of work to 1 day of work.</li>
-                                        <li>Web application based on Php, JavaScript, Ajax, jQuery, Bootstrap, CSS, HTML, Oracle.</li>
-                                    </ul>
-                                    <h4 class="card-title">Products</h4>
-                                    <ul class="">
-                                        <li>Indexation and relation of documents interface</li>
-                                        <li>Document Finder and navigator</li>
-                                        <li>Categorization of types of purchases</li>
-                                        <li>Operational efficiency KPIs</li>
-                                        <li>Transfer of interannual budgets</li>
-                                    </ul>
+                <div data-wow-delay="0.5s" class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25">
+                    <div class="row p-2">
+                        <div class="col-12 col-lg-5 card border-0  p-4 ">
+                            <h3 class="text-center">Universidad de La Serena University</h3>
+                            <div class="card-body ">
+                                <div>
+                                    <div class="">
+                                        <p class="text-center">Creation of a web platform for the control and reporting of expenses of university projects.</p>
+
+                                        <ul class="">
+                                            <li>Analyzed, designed, developed, tested, and implemented financial application for manage and control project expenses.</li>
+                                            <li>Reduction of the time of analysis and processing expenses of the projects from 1 month of work to 1 day of work.</li>
+                                            <li>Web application based on Php, JavaScript, Ajax, jQuery, Bootstrap, CSS, HTML, Oracle.</li>
+                                        </ul>
+                                        <h4 class="card-title">Products</h4>
+                                        <ul class="">
+                                            <li>Indexation and relation of documents interface</li>
+                                            <li>Document Finder and navigator</li>
+                                            <li>Categorization of types of purchases</li>
+                                            <li>Operational efficiency KPIs</li>
+                                            <li>Transfer of interannual budgets</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow  " >
-                        <div class="card-body col">
 
+                        <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow zoom-effect efectoHover">
+                            <div class="card-body col ">
+                                <div class="d-flex col">
+                                    <div class="w-50 text-center">
+                                        <img class="img-fluid img-thumbnail" src="./include/img/universidad-la-serena.jpg"  onclick="showUls1()">
+                                    </div>
+                                    <div class="w-50 text-center">
+                                        <img class="img-fluid img-thumbnail" src="./include/img/documents-link.png"  onclick="showUls2()">
+                                    </div>
 
-                            <div class="d-flex col">
-                                <div class="w-50 text-center">
-                                    <img class="img-fluid img-thumbnail" src="./include/img/universidad-la-serena.jpg"  onclick="showUls1()">
                                 </div>
-                                <div class="w-50 text-center">
-                                    <img class="img-fluid img-thumbnail" src="./include/img/documents-link.png"  onclick="showUls2()">
+                                <div class="d-flex col">
+
+                                    <div class="w-100 text-center">
+                                        <img class="img-fluid img-thumbnail" src="./include/img/KPI.png"  onclick="showUls3()">
+                                    </div>
                                 </div>
 
                             </div>
-                            <div class="d-flex col">
+                        </div>
+                    </div>
+                </div>
 
+                <div  class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25 ">
+                    <div class="row p-2 flex-row-reverse">
+                        <div class="col-12 col-lg-5  card border-0  p-4 ">
+                            <h3 class=" text-center ">Visiion Ingenieria Limitada</h3>
+                            <div class="card-body ">
+                                <div>
+                                    <div class="">
+                                        <p class="text-center">Creation of a module for the role of receptionist in the center of medical specialties and social services for the Ciudad Mujer project of the government of Paraguay.</p>
+
+                                        <ul  class="">
+                                            <li>Analyzed, designed, developed, tested, and implemented full schedule web application at the "Ciudad Mujer (Woman City)" project.</li>
+                                            <li>The scheduling module allows for the creation of booking routes for multiple medicals disciplines in an average time of 1:30 minutes.</li>
+                                            <li>Application design database, interfaces, and APIS. Web application based on Laravel, jQuery, Bootstrap, CSS, and HTML.</li>
+                                        </ul>
+                                        <h4 class="m-2">Click on the image to tray it.</h4>
+                                        <h6>User ids: 1, 2, 3, 4, 11, 13</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow efectoHover " >
+                            <div class="card-body col">
                                 <div class="w-100 text-center">
-                                    <img class="img-fluid img-thumbnail" src="./include/img/KPI.png"  onclick="showUls3()">
+                                    <a href="http://jaracena.hopto.org:8000" target="_blank"><img class="img-fluid img-thumbnail" src="./include/img/CiudadMujer_Calendar.png"></a>
                                 </div>
-
-                            </div>
-
-                            <div class="modal fade  m-auto" tabindex="-1" role="dialog" id="modal-uls1">
-                                <div class="modal-dialog modal-lg " role="document">
-
-                                    <div class="modal-content h5" style="height: 40em; width: 60rem">
-                                        <div class="col-12 modal-body h-100">
-                                            <div class="modal-header bg-white w-100">
-                                                Universidad de La Serena University Main building
-                                            </div>
-                                            <img class="w-100" src="./include/img/universidad-la-serena.jpg" >
-                                        </div>
-                                    </div>
+                                <div class="text-center">
+                                    (app for sample test purpose only)
                                 </div>
-                            </div>
-                            <div class="modal fade  m-auto" tabindex="-1" role="dialog" id="modal-uls2">
-                                <div class="modal-dialog modal-lg " role="document">
-                                    <div class="modal-content h5" style="height: 40em; width: 60rem">
-                                        <div class="modal-header bg-white w-100">
-                                            Indexation and relation of documents interface
-                                        </div>
-                                        <div class="col-12 modal-body w-100 text-center">
-                                            <img src="./include/img/documents-link.png" style="height: 30rem">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal fade  m-auto" tabindex="-1" role="dialog" id="modal-uls3">
-                                <div class="modal-dialog modal-lg " role="document">
-                                    <div class="modal-content h5" style="height: 40em; width: 60rem">
-                                        <div class="modal-header bg-white w-100">
-                                            Operational efficiency KPIs
-                                        </div>
-                                        <div class="col-12 modal-body w-100 text-center">
-                                            <img src="./include/img/KPI.png" style="height: 30rem">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div  class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25">
-                <div class="row p-2 flex-row-reverse">
-                    <div class="col-12 col-lg-5  card border-0  p-4 ">
-                                <h3 class=" text-center ">Visiion Ingenieria Limitada</h3>
-                        <div class="card-body ">
-                            <div>
-                                <div class="">
-                                   <p class="text-center">Creation of a module for the role of receptionist in the center of medical specialties and social services for the Ciudad Mujer project of the government of Paraguay.</p>
-
-                                    <ul  class="">
-                                        <li>Analyzed, designed, developed, tested, and implemented full schedule web application at the "Ciudad Mujer (Woman City)" project.</li>
-                                        <li>The scheduling module allows for the creation of booking routes for multiple medicals disciplines in an average time of 1:30 minutes.</li>
-                                        <li>Application design database, interfaces, and APIS. Web application based on Laravel, jQuery, Bootstrap, CSS, and HTML.</li>
-                                    </ul>
-                                    <h4 class="m-2">Click on the image to tray it.</h4>
-                                    <h6>User ids: 1, 2, 3, 4, 11, 13</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow  " >
-                        <div class="card-body col">
-                            <div class="w-100 text-center">
-                                <a href="http://jaracena.hopto.org:8000" target="_blank"><img class="img-fluid img-thumbnail" src="./include/img/CiudadMujer_Calendar.png"></a>
-                            </div>
-                            <div class="text-center">
-                                (app for sample test purpose only)
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div  class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25">
+                <div  class="card card-body d-flex  p-4 bg-white border-0 bg-opacity-25 ">
                 <div class="row p-2  d-flex ">
                     <div class="col-12 col-lg-5  card border-0  p-4">
                         <h3 class=" text-center">Free Lance</h3>
@@ -188,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow  " >
+                    <div class="col-12 col-lg-7 mx-auto mr-2 card border-0 shadow efectoHover " >
                         <div class="card-body col">
                             <div class="w-100 text-center">
                                 <a href="http://jaracena.hopto.org:8001" target="_blank"><img class="img-fluid img-thumbnail" src="./include/img/Bacor1.png"></a>
@@ -205,6 +167,46 @@
                 </div>
             </div>
 
+
+        </div>
+    </div>
+
+    <div class="modal fade  m-auto" data-backdrop="false" tabindex="-1" role="dialog" id="modal-uls1">
+        <div class="modal-dialog modal-lg " role="document">
+
+            <div class="modal-content h5" style="height: 40em; width: 60rem">
+                <div class="col-12 modal-body h-100">
+                    <div class="modal-header bg-white w-100">
+                        Universidad de La Serena University Main building
+                    </div>
+                    <img class="w-100" src="./include/img/universidad-la-serena.jpg" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade  m-auto" data-backdrop="false" tabindex="-1" role="dialog" id="modal-uls2">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content h5" style="height: 40em; width: 60rem">
+                <div class="modal-header bg-white w-100">
+                    Indexation and relation of documents interface
+                </div>
+                <div class="col-12 modal-body w-100 text-center">
+                    <img src="./include/img/documents-link.png" style="height: 30rem">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade  m-auto" data-backdrop="false" tabindex="-1" role="dialog" id="modal-uls3">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content h5" style="height: 40em; width: 60rem">
+                <div class="modal-header bg-white w-100">
+                    Operational efficiency KPIs
+                </div>
+                <div class="col-12 modal-body w-100 text-center">
+                    <img src="./include/img/KPI.png" style="height: 30rem">
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
@@ -215,7 +217,29 @@
 <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>-->
 
     <script src="./include/js/particles.min.js"></script>
-    <script src="./include/js/particles.js"></script>
+    <script src="./include/js/app.js"></script>
+
+    <script >
+        function showBacor(){
+            $('#modal-bacor').modal('show');
+            $('#modal-bacor').modal('handleUpdate')
+
+
+        }
+        function showUls1(){
+            $('#modal-uls1').modal('show');
+            $('#modal-uls1').modal('handleUpdate')
+        }
+        function showUls2(){
+            $('#modal-uls2').modal('show');
+            $('#modal-uls2').modal('handleUpdate')
+        }
+
+        function showUls3(){
+            $('#modal-uls3').modal('show');
+            $('#modal-uls3').modal('handleUpdate')
+        }
+    </script>
 
 </body>
 </html>
