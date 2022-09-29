@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            margin: 0;
+            padding: 0;
+            border: black;
+            border-collapse: collapse;
+        }
+        table tr{
+            border: none;
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0;
+        }
+        table tr td{
+            border-collapse: collapse;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        message{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome <label id="nombre"for=""></label></h1>
+
+<input type="text" id="letra" maxlength="1" max="1">
+<button id="botonEvaluar" onclick="evaluar()">Send</button>
+<button id="cambiarNombre" onclick="cambiarNombre()">Change name</button>
+<button id="botonReiniciar" onclick="iniciar()">Restart game</button>
+<br>
+<br>
+Hidden word
+<br>
+<input type="text" id="escondida" readonly="readonly">
+<br>
+<br>
+<label for="ultimaLetra">Last word: </label> <label id="ultimaLetra"></label>
+<br>
+<label for="turnos">Played turn: </label> <label id="turnos"></label>
+<br>
+<label for="errores">Error count: </label> <label id="errores"></label>
+
+<h1>
+    <label for="ganaste"></label> <label id="ganaste"></label>
+</h1>
+
+<table >
+    <body>
+
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo17" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td rowspan="7" ><message id="helpmessage"></message></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo13" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo15"width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo16" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo14" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo12" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo11" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo10" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo8" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo9" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo7" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo6" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo5" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo4" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo3" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td id="cuerpo2" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td id="cuerpo1" width="20px" height="20px" bgcolor="#ffe4c4"></td>
+        <td width="20px" height="20px"></td>
+        <td></td>
+    </tr>
+
+    <a href="https://www.linkedin.com/in/johnnyaracena/?locale=en_US">About me</a>
+    </body>
+</table>
+
+
+<script>
+
+    var palabraSeleccionadaGame = "";
+    var palabras = ["abruptly","absurd","foxglove",
+        "lengths","fuchsia","funny",
+        "thumbscrew","transcript","transgress",
+        "nowadays","gossip","oxidize","iatrogenic",
+        "buckaroo","quips","wizard","jogging","kazoo","fixable","kitsch","strengths"
+    ];
+
+    var records=[];
+    var arrayEscondido =[];
+    var turnos=0;
+    var errores=0;
+    var checkError = 1;
+    var ultimaLetra = "";
+    var nombre="";
+
+
+    var evaluar = function(){
+
+        checkError = 1;
+        checkNombre();
+        var letra = document.getElementById("letra").value
+
+        ultimaLetra= letra;
+        if(letra !== ""){
+            turnos++;
+            document.getElementById("turnos").innerHTML = turnos.toString();
+            document.getElementById("escondida").value = aparecerLetra(letra);
+
+
+            if(checkError === 1){
+                errores++;
+                document.getElementById("cuerpo"+errores).setAttribute("bgcolor","red");
+
+                switch (errores){
+                    case 10:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "Please!!! HELP ME!!!!, Just cheat in console!!!!!";
+                        break;
+                    case 11:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "";
+                        break;
+                    case 12:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "NOOOO!!!, YOU FAIL!!!. YOU SHOULD FIND SOMETHING LIKE gameWordSelected";
+                        break;
+                    case 13:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "";
+                        break;
+                    case 14:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "NOOOO!!!, TRY TO FIND THAT NAME VARIABLE IN SPANISH";
+                        break;
+                    case 15:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "";
+                        break;
+                    case 16:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "TRY " + palabraSeleccionadaGame.substring(0,3)+"...";
+                        break;
+                    case 17:
+                        //alert(errores);
+                        document.getElementById("helpmessage").innerHTML = "AGGGG... ";
+                        break;
+
+                    default:
+                }
+            }
+            //Condicion de finnalizacion
+
+            document.getElementById("errores").innerHTML = errores.toString();
+            document.getElementById("ultimaLetra").innerHTML = ultimaLetra;
+            document.getElementById("letra").value="";
+            document.getElementById("letra").focus();
+
+
+            if(arrayEscondido.toString().replaceAll(",","") === palabraSeleccionadaGame){
+
+                document.getElementById("botonEvaluar").style.display = "none";
+                document.getElementById("ganaste").innerHTML = "GANASTE";
+            }
+
+            if(errores >= 17){
+                document.getElementById("botonEvaluar").style.display = "none";
+                document.getElementById("ganaste").innerHTML = "You lose, the word is &quot" + palabraSeleccionadaGame+"&quot";
+            }
+
+        }else{
+            alert('Write a letter to play');
+            document.getElementById("letra").focus();
+        }
+
+
+    }
+
+    var checkNombre= function(){
+
+
+        if(nombre==""){
+            do {
+                nombre = prompt("Write your name:");
+            }while (nombre == null)
+        }
+        document.getElementById("nombre").innerHTML=nombre;
+
+
+    }
+    var cambiarNombre = function(){
+
+
+        var n = prompt("Write your new name:");
+
+
+        if (n === null ){
+
+        }else{
+            nombre = n;
+            document.getElementById("nombre").innerHTML= nombre;
+        }
+
+
+    }
+    var seleccionarPalabra= function(palabras){
+        return palabras[Math.floor(Math.random()*palabras.length)];
+    }
+    var crearPalabraOculta = function(palabraSeleccionada){
+
+        palabraSeleccionadaGame = palabraSeleccionada;
+        for(var contador =0 ;contador < palabraSeleccionada.length; contador++){
+            arrayEscondido[contador] = "-";
+        }
+        return arrayEscondido.toString().replaceAll(",","");
+    }
+
+    var aparecerLetra= function(letra){
+
+        for(var contador =0 ;contador < palabraSeleccionadaGame.length; contador++){
+            if(palabraSeleccionadaGame[contador]===letra) {
+                arrayEscondido[contador] = letra;
+                checkError = 0;
+            }
+        }
+
+        return arrayEscondido.toString().replaceAll(",","");
+    }
+
+    var iniciar= function(){
+
+        records=[];
+        arrayEscondido =[];
+        turnos =0;
+        errores=0;
+        checkError = 1;
+        ultimaLetra = "";
+
+
+        checkNombre();
+        document.getElementById("errores").innerHTML = "0";
+        document.getElementById("turnos").innerHTML = "0";
+        document.getElementById("ultimaLetra").innerHTML = "";
+        document.getElementById("letra").value="";
+        document.getElementById("letra").focus();
+
+        for (var c = 1; c<=17;c++){
+            document.getElementById("cuerpo"+c).setAttribute("bgcolor","#ffe4c4");
+        }
+
+        document.getElementById("botonEvaluar").style.display = "";
+        document.getElementById("escondida").value = "";
+        document.getElementById("escondida").value = crearPalabraOculta(seleccionarPalabra(palabras));
+    }
+
+    var input = document.getElementById("letra");
+
+    // Execute a function when the user presses a key on the keyboard
+    input.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("botonEvaluar").click();
+        }
+    });
+
+    //Se pone la palabra escondida en el input escondido
+    iniciar();
+
+
+
+
+
+</script>
+
+</body>
+</html>
